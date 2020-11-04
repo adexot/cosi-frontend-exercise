@@ -1,7 +1,16 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import { useAppData } from 'contexts/AppContext'
+import Typography from '@material-ui/core/Typography'
 
 const Confirmation = () => {
-  return <div>Confirmation page</div>
+  const { resetAppData } = useAppData()
+
+  useEffect(() => {
+    // FIXME: uncomment this code
+    // resetAppData()
+  }, [])
+
+  return <Typography variant='h4'>Your check-in is confirmed</Typography>
 }
 
 export default Confirmation

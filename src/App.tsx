@@ -24,9 +24,9 @@ function App() {
             <ProtectedRoute exact path='/summary'>
               <Summary />
             </ProtectedRoute>
-            <ProtectedRoute exact path='/confirmation'>
+            <Route exact path='/confirmation'>
               <Confirmation />
-            </ProtectedRoute>
+            </Route>
           </Switch>
         </Router>
       </AppDataProvider>

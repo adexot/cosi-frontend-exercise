@@ -1,20 +1,27 @@
 import React from 'react'
 import Select, { SelectProps } from '@material-ui/core/Select'
 import MenuItem from '@material-ui/core/MenuItem'
+import { isNotEmptyArray } from 'libs/utils'
 
-const SelectInput: React.FC<SelectProps> = (props) => {
+interface ISelect extends SelectProps {
+  options?: string[]
+}
+
+const SelectInput: React.FC<ISelect> = ({ options, ...props }) => {
   return (
     <Select
       fullWidth
       variant='outlined'
       style={{ marginTop: '15px', textAlign: 'center' }}
-      defaultValue={0}
+      defaultValue=''
       {...props}
     >
-      <MenuItem value={0}>Nationality</MenuItem>
-      <MenuItem value={10}>Ten</MenuItem>
-      <MenuItem value={20}>Twenty</MenuItem>
-      <MenuItem value={30}>Thirty</MenuItem>
+      {isNotEmptyArray(options) &&
+        options?.map((country) => (
+          <MenuItem value={country} key={country}>
+            {country}
+          </MenuItem>
+        ))}
     </Select>
   )
 }
