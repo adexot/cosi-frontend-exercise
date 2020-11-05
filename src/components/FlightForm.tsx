@@ -3,11 +3,12 @@ import Button from 'components/Button'
 import TextInput from 'components/TextInput'
 import Select from 'components/Select'
 import Checkbox from '@material-ui/core/Checkbox'
-import FormControlLabel from '@material-ui/core/FormControlLabel'
-import { useForm } from 'react-hook-form'
+import { FormControl, FormControlLabel } from '@material-ui/core'
+import { useForm, Controller } from 'react-hook-form'
 import { useAppData } from 'contexts/AppContext'
 import { emailRegExp } from 'libs/utils'
 import constants from 'libs/constants'
+import reClient from 'libs/reqClient'
 
 export interface IFormData {
   firstName: string
@@ -22,13 +23,12 @@ const FlightForm: React.FC<{
   submitHandler: (data: IFormData) => void
   showTC?: boolean
 }> = ({ submitHandler, showTC = false }) => {
-  const { register, handleSubmit } = useForm()
+  const { register, handleSubmit, control } = useForm()
   const { appData } = useAppData()
   const [countryList, setCountryList] = useState([])
 
   useEffect(() => {
-    fetch(constants.countryAPI)
-      .then((res) => res.json())
+    reClient(constants.countryEndpoint)
       .then((data) => {
         const countries = data.map(
           (country: Record<string, string>) => country?.name
@@ -51,7 +51,21 @@ const FlightForm: React.FC<{
         placeholder='Last name'
         defaultValue={appData?.lastName}
       />
-      <Select placeholder='Nationality' options={countryList} />
+      <FormControl fullWidth>
+        <Controller
+          name='nationality'
+          control={control}
+          as={
+            <Select
+              placeholder='Nationality'
+              options={countryList}
+              inputRef={register({ required: true })}
+              defaultValue={appData.nationality}
+            />
+          }
+        />
+      </FormControl>
+
       <TextInput
         name='email'
         type='email'

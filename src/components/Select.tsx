@@ -7,15 +7,21 @@ interface ISelect extends SelectProps {
   options?: string[]
 }
 
-const SelectInput: React.FC<ISelect> = ({ options, ...props }) => {
+const SelectInput: React.FC<ISelect> = ({ options, name, ...props }) => {
   return (
     <Select
       fullWidth
       variant='outlined'
       style={{ marginTop: '15px', textAlign: 'center' }}
       defaultValue=''
+      displayEmpty
+      name={name}
+      id={name}
       {...props}
     >
+      <MenuItem value='' disabled>
+        Nationality
+      </MenuItem>
       {isNotEmptyArray(options) &&
         options?.map((country) => (
           <MenuItem value={country} key={country}>

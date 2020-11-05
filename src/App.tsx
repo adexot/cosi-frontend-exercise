@@ -1,5 +1,5 @@
 import React from 'react'
-import './App.scss'
+import './App.css'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import Index from 'routes/Index'
 import Flight from 'routes/Flight'
