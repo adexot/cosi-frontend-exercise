@@ -6,8 +6,7 @@ const Confirmation = () => {
   const { resetAppData } = useAppData()
 
   useEffect(() => {
-    // FIXME: uncomment this code
-    // resetAppData()
+    resetAppData()
   }, [])
 
   return <Typography variant='h4'>Your check-in is confirmed</Typography>

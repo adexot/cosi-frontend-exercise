@@ -4,3 +4,6 @@ export const emailRegExp = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|
 
 export const isNotEmptyArray = (arr: string[] | any) =>
   Array.isArray(arr) && arr.length > 0
+
+export const splitString = (text: string, divider: string) =>
+  text.split(divider).join(' ')

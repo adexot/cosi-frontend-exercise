@@ -30,13 +30,13 @@ const Index = () => {
           id='flightNumber'
           name='flightNumber'
           placeholder='Flight #'
-          inputRef={register}
+          inputRef={register({ required: true })}
         />
         <TextInput
           name='lastName'
           id='lastName'
           placeholder='Last name'
-          inputRef={register}
+          inputRef={register({ required: true })}
         />
         <Button>Search flight</Button>
       </form>

@@ -10,6 +10,7 @@ const Flight = () => {
   const history = useHistory()
 
   const saveData = (data: IFormData) => {
+    console.log({ data })
     setAppData(data)
     history.push('/summary')
   }

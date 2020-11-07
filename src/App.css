@@ -6,3 +6,7 @@
 .textInput {
   display: block;
 }
+
+::placeholder::first-letter {
+  text-transform: capitalize;
+}

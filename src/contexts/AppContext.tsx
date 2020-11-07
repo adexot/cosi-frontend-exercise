@@ -2,7 +2,7 @@ import React, { createContext, useState, useContext, useEffect } from 'react'
 import { noOp } from 'libs/utils'
 import constants from 'libs/constants'
 
-export interface AppContextProps {
+export interface AppContextProps extends Record<any, any> {
   firstName?: string
   lastName?: string
   country?: string
@@ -13,6 +13,14 @@ export interface AppContextProps {
   terms?: string
   flightNumber?: string
   acceptTerms?: boolean
+  residence_address?: string
+  residence_city?: string
+  residence_country?: string
+  passport_expiry_date?: string
+  birth_date?: string
+  birth_place?: string
+  passport_date_issue?: string
+  passport_location_issue?: string
 }
 
 export const initialAppData: AppContextProps = {}
