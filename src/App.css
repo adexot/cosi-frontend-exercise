@@ -10,3 +10,21 @@
 ::placeholder::first-letter {
   text-transform: capitalize;
 }
+
+#root {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.app-container {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 0 50px;
+}
+
+.user-name {
+  text-transform: capitalize;
+}

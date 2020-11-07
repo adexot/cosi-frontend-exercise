@@ -11,7 +11,7 @@ import ProtectedRoute from 'components/ProtectedRoute'
 
 function App() {
   return (
-    <Box display='column' height='100vh' justifyContent='center'>
+    <Box className='app-container'>
       <AppDataProvider>
         <Router>
           <Switch>

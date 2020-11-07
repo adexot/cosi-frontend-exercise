@@ -9,7 +9,11 @@ const Confirmation = () => {
     resetAppData()
   }, [])
 
-  return <Typography variant='h4'>Your check-in is confirmed</Typography>
+  return (
+    <Typography variant='h6'>
+      Your check-in <br /> is confirmed!
+    </Typography>
+  )
 }
 
 export default Confirmation

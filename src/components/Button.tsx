@@ -6,7 +6,7 @@ const ButtonComp: React.FC<{}> = ({ children }) => {
     <Button
       color='primary'
       variant='contained'
-      style={{ marginTop: '20px' }}
+      style={{ marginTop: '20px', color: 'yellow' }}
       fullWidth
       type='submit'
     >

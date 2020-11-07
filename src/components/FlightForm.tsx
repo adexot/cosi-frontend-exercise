@@ -185,7 +185,7 @@ const FlightForm: React.FC<{
             />
           }
           label='Accepts T&C'
-          style={{ color: 'green' }}
+          style={{ color: 'green', marginTop: '15px' }}
         />
       )}
       <Button>Continue</Button>

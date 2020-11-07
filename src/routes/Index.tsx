@@ -24,7 +24,9 @@ const Index = () => {
 
   return (
     <Box display='column'>
-      <Typography>Welcome to web check-in</Typography>
+      <Typography variant='h6'>
+        Welcome to your <br /> web check-in
+      </Typography>
       <form onSubmit={handleSubmit(saveData)}>
         <TextInput
           id='flightNumber'

@@ -10,14 +10,15 @@ const Flight = () => {
   const history = useHistory()
 
   const saveData = (data: IFormData) => {
-    console.log({ data })
     setAppData(data)
     history.push('/summary')
   }
 
   return (
     <Box display='column'>
-      <Typography>Hi, Mr. {appData?.lastName}</Typography>
+      <Typography variant='h6'>
+        Hi, Mr. <span className='user-name'>{appData?.lastName}</span>!
+      </Typography>
       <FlightForm submitHandler={saveData} showTC={true} />
     </Box>
   )
