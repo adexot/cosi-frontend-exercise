@@ -11,9 +11,11 @@
 }
 
 .app-container {
+  max-height: 100%;
   max-width: 400px;
   margin: 0 auto;
   padding: 0 50px;
+  overflow-y: auto;
 }
 
 .user-name {
