@@ -1,7 +1,11 @@
 import React from 'react'
-import Button from '@material-ui/core/Button'
+import { Button, CircularProgress } from '@material-ui/core'
 
-const ButtonComp: React.FC<{}> = ({ children }) => {
+const ButtonComp: React.FC<{ loading?: boolean }> = ({
+  children,
+  loading = true,
+}) => {
+  console.log({ loading })
   return (
     <Button
       color='primary'
@@ -10,7 +14,11 @@ const ButtonComp: React.FC<{}> = ({ children }) => {
       fullWidth
       type='submit'
     >
-      {children}
+      {loading ? (
+        <CircularProgress size={24} style={{ color: 'yellow' }} />
+      ) : (
+        children
+      )}
     </Button>
   )
 }

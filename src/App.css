@@ -1,12 +1,3 @@
-.App {
-  text-align: center;
-  display: flex;
-}
-
-.textInput {
-  display: block;
-}
-
 ::placeholder::first-letter {
   text-transform: capitalize;
 }
@@ -27,4 +18,9 @@
 
 .user-name {
   text-transform: capitalize;
+}
+
+.app-container button {
+  text-transform: inherit;
+  font-size: 1.2rem;
 }

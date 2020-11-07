@@ -13,7 +13,7 @@ interface IFormData {
 }
 
 const Index = () => {
-  const { register, handleSubmit } = useForm()
+  const { register, handleSubmit, formState } = useForm()
   const { setAppData } = useAppData()
   const history = useHistory()
 
@@ -21,6 +21,8 @@ const Index = () => {
     setAppData(data)
     history.push('/flight')
   }
+
+  const { isSubmitting } = formState
 
   return (
     <Box display='column'>
@@ -40,7 +42,7 @@ const Index = () => {
           placeholder='Last name'
           inputRef={register({ required: true })}
         />
-        <Button>Search flight</Button>
+        <Button loading={isSubmitting}>Search flight</Button>
       </form>
     </Box>
   )

@@ -34,7 +34,7 @@ const FlightForm: React.FC<{
   submitHandler: (data: IFormData) => void
   showTC?: boolean
 }> = ({ submitHandler, showTC = false }) => {
-  const { register, handleSubmit, control } = useForm()
+  const { register, handleSubmit, control, formState } = useForm()
   const { appData } = useAppData()
   const [countryList, setCountryList] = useState([])
   const [additionalFields, setAdditionalFields] = useState<
@@ -120,6 +120,8 @@ const FlightForm: React.FC<{
     })
   }
 
+  const { isSubmitting } = formState
+
   return (
     <form onSubmit={handleSubmit(submitHandler)}>
       <TextInput
@@ -188,7 +190,7 @@ const FlightForm: React.FC<{
           style={{ color: 'green', marginTop: '15px' }}
         />
       )}
-      <Button>Continue</Button>
+      <Button loading={isSubmitting}>Continue</Button>
     </form>
   )
 }
